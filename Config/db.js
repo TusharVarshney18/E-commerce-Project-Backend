@@ -1,9 +1,15 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 
+
+
+
+const mongokey = process.env.MONGO_KEY;
 export const connectDB = async () => {
   await mongoose
-    .connect(
-      "mongodb+srv://VarshneyG:Doomsday@cluster0.dm762.mongodb.net/food-del?retryWrites=true&w=majority",
+    .connect(mongokey
+      ,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
