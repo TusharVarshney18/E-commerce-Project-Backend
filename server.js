@@ -35,10 +35,12 @@ app.get("/", (req, res) => {
   res.send("api is working");
 });
 
-app.listen(port, () => {
-  console.log(`server has started on http://localhost:${port}`);
-});
-
+if (process.env.NODE_ENV !== "production") {
+  const port = 4000;
+  app.listen(port, () => {
+    console.log(`Server running locally at http://localhost:${port}`);
+  });
+}
 
 
 export default app;
