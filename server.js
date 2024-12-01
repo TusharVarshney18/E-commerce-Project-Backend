@@ -33,3 +33,7 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`server has started on http://localhost:${port}`);
 });
+
+
+
+export default app;
