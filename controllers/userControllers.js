@@ -3,6 +3,12 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import validator from "validator";
 import keys from "../Config/keys.js";
+import dotenv from 'dotenv';
+
+
+
+
+dotenv.config();
 
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
