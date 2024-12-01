@@ -10,6 +10,10 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+
+
+
+
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -90,6 +94,7 @@ const adminLogin = async (req, res) => {
     if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
       const token = jwt.sign(email + password, process.env.JWT_SECRET,)
       res.json({ success: true, token })
+
     } else {
       res.json({ success: false, message: "Invalid Credentials" })
     }
