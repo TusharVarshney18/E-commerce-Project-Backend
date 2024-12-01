@@ -13,7 +13,12 @@ const port = 4000;
 // Middleware
 
 app.use(express.json());
-app.use(cors({ origin: '*' }));
+app.use(cors({
+  origin: ['https://your-frontend-domain.com', 'https://e-commerce-project-backend-psi.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 
 // Db Connection
 connectDB();
