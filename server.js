@@ -25,8 +25,7 @@ connectDB();
 
 // Api End Point
 app.use("/api/food", foodRouter);
-app.use("/images", express.static(path.join(__dirname, "public/Uploads")));
-
+app.use("/images", express.static("Uploads"));
 app.use("/api/user", userRouter);
 app.use("/api/cart", cartRouter);
 app.use("/api/order", orderRouter);
