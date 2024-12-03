@@ -14,7 +14,7 @@ const port = 4000;
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://e-commerce-project-admin-ten.vercel.app', 'https://e-commerce-project-backend-psi.vercel.app'],
+  origin: ['https://e-commerce-project-frontend-six.vercel.app', 'https://e-commerce-project-admin-ten.vercel.app', 'https://e-commerce-project-backend-psi.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
