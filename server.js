@@ -18,7 +18,8 @@ app.use(express.json());
 app.use(
   cors({
     origin: [
-      "https://e-commerce-project-frontend-six.vercel.app",
+      "http://localhost:5173",
+      "https://e-commerce-project-frontend-six.vercel.app/",
       "https://e-commerce-project-admin-ten.vercel.app",
       "https://e-commerce-project-backend-psi.vercel.app",
     ],

@@ -4,14 +4,16 @@ import jwt from "jsonwebtoken";
 import keys from "../Config/keys.js";
 
 const authMiddleware = async (req, res, next) => {
-  const { token } = req.headers;
+  const authHeader = req.headers.authorization;
 
-  if (!token) {
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
     return res.status(401).json({
       success: false,
       message: "Not Authorized. Please log in again.",
     });
   }
+  const token = authHeader.split(" ")[1];
+
 
   try {
     const decodedToken = jwt.verify(token, keys.jwt_secret);
